@@ -24,9 +24,9 @@ app.get('/api/config/paypal', (req, res) => {
 });
 
 
-app.use(express.static(path.join(__dirname, '/frontend/build')));
+app.use(express.static(path.join(__dirname, '/react_mern_shop/build')));
 app.get('*', (req, res) =>
-  res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
+  res.sendFile(path.join(__dirname, '/react_mern_shop/build/index.html'))
 );
 
 // app.get('/', (req, res) => {
