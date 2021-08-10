@@ -178,6 +178,13 @@ text-decoration: none;
 .p-1 {
   padding: 1rem;
 }
+
+.text-center {
+  text-align: center
+}
+
+
+
 /* Aside */
 aside {
   position: fixed;
@@ -350,7 +357,12 @@ img.large {
 }
 /* Carousel */
 .carousel .slide img {
-  max-width: 30rem;
+  max-width: 90rem;
+  /*!*!*min-width: 60rem;*!*!*/
+  max-height: 58rem;
+
+
+  margin-bottom: 5rem;
 }
 
 /* Search */
@@ -368,3 +380,4 @@ img.large {
 .active {
   font-weight: bold;
 }
+

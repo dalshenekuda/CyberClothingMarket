@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Product from '../components/Product';
@@ -21,34 +21,40 @@ export default function HomeScreen() {
     users: sellers,
   } = userTopSellersList;
 
+  let sliders=[]
+    sliders.push('/images/slider1.jpg')
+    sliders.push('/images/slider2.jpg')
+    sliders.push('/images/slider3.jpg')
+    sliders.push('/images/slider4.jpg')
+
   useEffect(() => {
     dispatch(listProducts({}));
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-    <div>
-      <h2>Top Sellers</h2>
-      {loadingSellers ? (
-        <LoadingBox></LoadingBox>
-      ) : errorSellers ? (
-        <MessageBox variant="danger">{errorSellers}</MessageBox>
-      ) : (
-        <>
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
+    <div className='text-center'>
+      <h2 className='qqq'>Exclusive fashion</h2>
 
-          <Carousel showArrows autoPlay showThumbs={false}>
-            {sellers.map((seller) => (
-              <div key={seller._id}>
-                <Link to={`/seller/${seller._id}`}>
-                  <img src={seller.seller.logo} alt={seller.seller.name} />
-                  <p className="legend">{seller.seller.name}</p>
-                </Link>
+      {/*{loadingSellers ? (*/}
+      {/*  <LoadingBox></LoadingBox>*/}
+      {/*) : errorSellers ? (*/}
+      {/*  <MessageBox variant="danger">{errorSellers}</MessageBox>*/}
+      {/*) : (*/}
+      {/*  <>*/}
+      {/*    {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}*/}
+
+          <Carousel emulateTouch ={true} showArrows={true} infiniteLoop={true} interval={5000}
+                    autoPlay={true} showThumbs={false} transitionTime={2000} stopOnHover={false}
+                    showStatus={false}>
+            {sliders.map((slider) => (
+                <div>
+                  <img src={slider} alt={"Slider"} />
               </div>
             ))}
           </Carousel>
           
-        </>
-      )}
+        {/*</>*/}
+      {/*)}*/}
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
