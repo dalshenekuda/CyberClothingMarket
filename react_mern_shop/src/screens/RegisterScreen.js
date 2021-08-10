@@ -19,7 +19,6 @@ export default function RegisterScreen(props) {
   const { userInfo, loading, error } = userRegister;
 
   const dispatch = useDispatch();
-
   const submitHandler = (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
@@ -28,7 +27,6 @@ export default function RegisterScreen(props) {
       dispatch(register(name, email, password));
     }
   };
-  
   useEffect(() => {
     if (userInfo) {
       props.history.push(redirect);

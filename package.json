@@ -5,11 +5,9 @@
   "type": "module",
   "main": "server.js",
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "start": "node server.js",
-    "server": "nodemon node_js/server.js",
-    "client": "npm run start --prefix react_mern_shop",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "build": "cd react_mern_shop && npm install && npm run build",
+    "start": "nodemon --watch node_js --exec node --experimental-modules node_js/server.js"
+
   },
   "repository": {
     "url": "git+https://github.com/dalshenekuda/MernShop.git"
@@ -27,6 +25,7 @@
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.14",
+    "multer": "^1.4.2",
     "react-paypal-button-v2": "^2.6.3"
   },
   "devDependencies": {
