@@ -6,7 +6,7 @@
   "main": "server.js",
   "scripts": {
     "build": "cd react_mern_shop && npm install && npm run build",
-    "start": "nodemon --watch node_js --exec node --experimental-modules node_js/server.js"
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "repository": {
     "url": "git+https://github.com/dalshenekuda/MernShop.git"
