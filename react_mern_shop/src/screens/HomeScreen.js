@@ -22,10 +22,10 @@ export default function HomeScreen() {
   } = userTopSellersList;
 
   let sliders=[]
-    sliders.push('/images/slider1.jpg')
-    sliders.push('/images/slider2.jpg')
-    sliders.push('/images/slider3.jpg')
-    sliders.push('/images/slider4.jpg')
+    sliders.push('/images/slider11.jpg')
+    sliders.push('/images/slider12.jpg')
+    sliders.push('/images/slider13.jpg')
+    sliders.push('/images/slider14.jpg')
 
   useEffect(() => {
     dispatch(listProducts({}));
